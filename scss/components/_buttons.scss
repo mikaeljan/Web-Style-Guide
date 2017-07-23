@@ -1,0 +1,19 @@
+// ==========================================================================
+// Buttons
+// ==========================================================================
+
+.theme__colors {
+  color: $white;
+  @include grid-colors($grid-colors);
+  @include button-colors($button-colors);
+}
+
+[class^="btn--"] {
+  @extend %btn;
+  margin-bottom: em(20px, 14px);
+  @include align-self(stretch);
+  @include mq(desktop) {
+  margin-left: em(10px);
+  margin-right: em(30px);
+  }
+}

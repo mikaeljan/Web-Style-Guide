@@ -1,0 +1,17 @@
+// The universal selector (*)
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+// ul elements
+
+// p elements
+
+p {
+  margin: 0 0 em(30px, 18px);
+  font-weight: $font-weight--light;
+  font-size: em(22px);
+  line-height: (27px/18px);
+}

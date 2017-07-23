@@ -1,0 +1,21 @@
+// ==========================================================================
+// Images
+// ==========================================================================
+
+.img {
+  @extend %img;
+  @include m(logo) {
+    @extend %img;
+  }
+  @include m(frame) {
+    @extend %img;
+    @include align-self(stretch);
+    height: 250px;
+  }
+  @include m(avatar) {
+    @extend %img;
+    @include align-self(center);
+    //width:185px;
+  }
+}
+

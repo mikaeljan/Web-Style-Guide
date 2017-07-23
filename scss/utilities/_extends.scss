@@ -1,0 +1,66 @@
+//Nav Items
+
+//Links
+%link {
+  color: $color-link-default;
+  text-decoration: none;
+}
+%nav-item-link {
+  @extend %link;
+  color: $color-prim;
+  font-weight: $font-weight--light;
+  font-size: em(22px);
+  display: block;
+  padding: em(8px, 18px);
+
+}
+%nav-item-on {
+  @extend %link;
+  color: $white;
+  background-color:$color-link-default;
+  border-radius: 25px;
+}
+
+//Headlines
+%hdln-prim {
+  color: $color-sec;
+  font-size: em(42px);
+  line-height: (46px/42px);
+  margin-top: 0;
+}
+%hdln-sec {
+  color: $color-prim;
+  letter-spacing: $letter-space;
+  font-size: em(24px);
+}
+
+// Buttons
+%btn {
+  display: block;
+  padding: 15px 30px;
+  border: 0;
+  border-radius : $br--default;
+  color: $white;
+  text-transform: uppercase;
+  font-size : em(14px);
+  font-weight: $font-weight--regular;
+  transition: opacity $trns-duration;
+  &:hover {
+    opacity: .75;
+  }
+  &:active {
+    opacity: initial;
+  }
+}
+
+%centered {
+  text-align: center;
+}
+// Image
+%img{
+  //@extend %centered;
+  display:inline-block;
+  padding: em(12px);
+  max-width: 100%;
+}
+//

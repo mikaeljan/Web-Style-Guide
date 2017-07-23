@@ -1,0 +1,29 @@
+// ==========================================================================
+// Form Elements
+// ==========================================================================
+
+.form {
+	@include flexbox;
+	@include flex-direction(column);
+	@include align-items(stretch);
+	width: 100%;
+	@include e(label) {
+		@include m(hidden) {
+			display:none;
+		}
+		display: block;
+		margin-bottom: em(10px);
+	}
+	@include e(input) {
+		font-size: em(18px);
+		margin: em(20px, 18px);
+		padding: em(15px);
+		border: none;
+		border-bottom: 10px solid $color-sec;
+	}
+	@include e(btn) {
+		@extend %btn;
+		width:100%;
+		background: black;
+	}
+}

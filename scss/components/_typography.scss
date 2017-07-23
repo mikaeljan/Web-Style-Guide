@@ -1,0 +1,38 @@
+// ==========================================================================
+// Typography related
+// ==========================================================================
+.container {
+  font-size: $base__font-size;
+  font-family: $font-family--primary;
+  line-height: ($base__line/$base__font-size);
+  color: $color-prim;
+}
+
+.headline {
+  &--primary {
+    @extend %hdln-prim;
+    margin:0;
+    margin-bottom: em(40px, 42px);
+    padding-left: 20px;
+    @include mq(desktop){
+      padding-left:0;
+    }
+  }
+  &--secondary {
+    margin:0;
+    @extend %hdln-sec;
+    margin-bottom: em(22px, 24px);
+  }
+}
+.link {
+  @extend %link;
+  font-weight:$font-weight--bold;
+}
+.blockquote {
+  margin:0;
+  font-weight: $font-weight--bold;
+  font-style : italic;
+  font-size : em(16px);
+  border-left: 15px solid $color-sec;
+  padding-left: 5px;
+}

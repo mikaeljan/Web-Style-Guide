@@ -1,0 +1,58 @@
+// ==========================================================================
+// Containers
+// ==========================================================================
+// Container
+
+.container {
+  @include flexbox;
+  @include flex-direction(column);
+  width: 90%;
+  margin: auto;
+  .grid,
+  .grid__row--12 {
+    @include e(row) {
+      @include flexbox;
+      @include flex-direction(column);
+      @include align-items(center);
+
+      //@include align-self(center);
+      padding: em(20px);
+      @include mq('desktop') {
+        @include flex-direction(row);
+        @include justify-content(space-between);
+
+      }
+    }
+    @include e(col){
+      @include flexbox;
+      @include flex-direction(column);
+      @include g-columns;
+      @include align-items(stretch);
+
+      //@include mq(desktop) {
+      //  @include flexbox;
+      //  @include flex-direction(row);
+      //}
+    }
+  }
+  [class^="grid__col--"] {
+    margin-top: em(10px);
+    padding: em(10px);
+    @include flexbox;
+    @include align-items(center);
+    @include align-self(stretch);
+    @include flex-direction(column);
+
+    @include mq(desktop) {
+      @include flexbox;
+      @include flex-direction(row);
+      @include align-self(flex-start);
+      border-radius: 10px;
+      margin-left:em(15px);
+    }
+  }
+ }
+
+// Centered
+.centered {
+  @extend %centered;}

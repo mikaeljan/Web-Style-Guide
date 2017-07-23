@@ -744,6 +744,9 @@ p {
   margin: 0;
   margin-bottom: 0.9523809524em;
   padding-left: 20px; }
+  @media (min-width: 769px) {
+    .headline--primary {
+      padding-left: 0; } }
 .headline--secondary {
   margin: 0;
   margin-bottom: 0.9166666667em; }

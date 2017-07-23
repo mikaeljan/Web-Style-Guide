@@ -1,0 +1,24 @@
+// ==========================================================================
+// Nav
+// ==========================================================================
+
+.nav {
+  @extend %centered;
+  @include flexbox;
+  @include flex-direction(column);
+  margin-top: em(50px);
+  margin-bottom: em(30px);
+  @include mq(desktop) {
+    @include flex-direction(row);
+  }
+  @include e(item) {
+    max-width:100%;
+    a {
+      @extend %nav-item-link;
+      &:hover {
+        @extend %nav-item-on;
+        font-weight: $font-weight--bold;
+      }
+    }
+  }
+}
