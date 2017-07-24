@@ -13,7 +13,6 @@
       @include flexbox;
       @include flex-direction(column);
       @include align-items(center);
-      border: 1px solid black;
       padding: em(20px);
       @include mq('desktop') {
         @include flex-direction(row);
@@ -25,8 +24,6 @@
     }
   }
   [class^="grid__col--"] {
-    border: 1px solid black;
-
     margin-top: em(10px);
     padding: em(10px);
     @include flexbox;
@@ -44,7 +41,6 @@
   @include flexbox;
   @include flex-direction(column);
   @include align-items(center);
-  border: 1px solid black;
   padding: em(20px);
   @include mq('desktop') {
     @include flex-direction(row);
