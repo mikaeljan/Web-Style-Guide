@@ -23,5 +23,8 @@
   }
 }
 
-.grid__col--9.nav {
-  margin-left: }
+.grid__col--9 .centered {
+  @include mq(desktop) {
+    margin-right: 0;
+  }
+}

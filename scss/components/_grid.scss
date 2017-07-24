@@ -22,8 +22,6 @@
     }
     @include e(col){
       @include g-width;
-      //@include mq(desktop) {
-      //}
     }
   }
   [class^="grid__col--"] {
