@@ -21,9 +21,5 @@
 		border: none;
 		border-bottom: 10px solid $color-sec;
 	}
-	@include e(btn) {
-		@extend %btn;
-		width:100%;
-		background: black;
-	}
 }
+

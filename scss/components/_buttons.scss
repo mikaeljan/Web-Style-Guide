@@ -10,10 +10,6 @@
 
 [class^="btn--"] {
   @extend %btn;
-  margin-bottom: em(20px, 14px);
-  @include align-self(stretch);
-  @include mq(desktop) {
-  margin-left: em(10px);
-  margin-right: em(30px);
-  }
+  width: 100%;
+  margin:.5em;
 }

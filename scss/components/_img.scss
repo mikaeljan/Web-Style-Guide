@@ -11,11 +11,12 @@
     @extend %img;
     @include align-self(stretch);
     height: 250px;
+    @include mq(desktop){
+    }
   }
   @include m(avatar) {
     @extend %img;
     @include align-self(center);
-    //width:185px;
   }
 }
 
