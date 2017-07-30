@@ -11,6 +11,6 @@ Using [Sass](http://sass-lang.com/guide) to create a responsive template guide f
 Link to the website: <br />
 http://mikaeljan.github.io/Web-Style-Guide/
 
-For any questions, please feel free to contact me:<br />
+For any questions, please feel free to contact me:<br/>
 mikael.janek@gmail.com
 
