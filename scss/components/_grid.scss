@@ -8,31 +8,19 @@
   @include flex-direction(column);
   width: 90%;
   margin: auto;
-  .grid,
-  .grid__row--12 {
+  .grid {
     @include e(row) {
       @include flexbox;
       @include flex-direction(column);
       @include align-items(center);
-
-      //@include align-self(center);
       padding: em(20px);
       @include mq('desktop') {
         @include flex-direction(row);
         @include justify-content(space-between);
-
       }
     }
     @include e(col){
-      @include flexbox;
-      @include flex-direction(column);
-      @include g-columns;
-      @include align-items(stretch);
-
-      //@include mq(desktop) {
-      //  @include flexbox;
-      //  @include flex-direction(row);
-      //}
+      @include g-width;
     }
   }
   [class^="grid__col--"] {
@@ -44,15 +32,36 @@
     @include flex-direction(column);
 
     @include mq(desktop) {
-      @include flexbox;
-      @include flex-direction(row);
-      @include align-self(flex-start);
       border-radius: 10px;
-      margin-left:em(15px);
+      margin-left:0.5em;
     }
   }
  }
+.grid__row--12 {
+  @include flexbox;
+  @include flex-direction(column);
+  @include align-items(center);
+  padding: em(20px);
+  @include mq('desktop') {
+    @include flex-direction(row);
+    @include justify-content(space-between);
 
+  }
+}
+.centered.grid__col--7 {
+  width: 100%;
+  @include mq(desktop){
+    margin: auto;
+  }
+}
+
+.grid__row--12 .grid__col--12 {
+  @include mq(desktop){
+    @include flex-direction(row);
+  }
+
+}
 // Centered
 .centered {
-  @extend %centered;}
+  @extend %centered;
+}

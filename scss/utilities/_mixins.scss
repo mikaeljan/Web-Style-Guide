@@ -1,6 +1,22 @@
 // ==========================================================================
 // Mixins
 // ==========================================================================
+// Media queries
+@mixin mq($break) {
+  @if $break == "mobile" {
+    @media (max-width: $brkpoint-md) {
+      @content;
+    }
+  }
+  @else if $break == "desktop" {
+    @media (min-width: $brkpoint-md+1) {
+      @content;
+    }
+  }
+  @else {
+    @error "Whoops! No value could be retrieved for `#{$break}`. "
+  }
+}
 
 // Element and Modifier BEM Selectors
 @mixin e($element) {
@@ -18,59 +34,34 @@
 
 // Flexbox display
 @mixin flexbox() {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
   display: flex;
-  //flex-wrap: wrap;
 }
 // Flex Flow Direction
 // - applies to: flex containers
-// row | row-reverse | column | column-reverse
 @mixin flex-direction($direction) {
-  -webkit-flex-direction: $direction;
-  -moz-flex-direction: $direction;
-  -ms-flex-direction: $direction;
   flex-direction: $direction;
 }
 // Axis Alignment
 // - applies to: flex containers
-// flex-start | flex-end | center | space-between | space-around
 @mixin justify-content($justify) {
-  -webkit-justify-content: $justify;
-  -moz-justify-content: $justify;
-  -ms-justify-content: $justify;
   justify-content: $justify;
-  -ms-flex-pack: $justify;
 }
 // Cross-axis Alignment
 // - applies to: flex containers
-// flex-start | flex-end | center | baseline | stretch
 @mixin align-items($align) {
-  -webkit-align-items: $align;
-  -moz-align-items: $align;
-  -ms-align-items: $align;
+
   align-items: $align;
 }
-
 // Cross-axis Alignment
 // - applies to: flex items
-// auto | flex-start | flex-end | center | baseline | stretch
 @mixin align-self($align) {
-  -webkit-align-self: $align;
-  -moz-align-self: $align;
-  -ms-align-self: $align;
+
   align-self: $align;
 }
 // Display Order
 // - applies to: flex items
 // <integer>
 @mixin order($val) {
-  -webkit-box-ordinal-group: $val;
-  -moz-box-ordinal-group: $val;
-  -ms-flex-order: $val;
-  -webkit-order: $val;
   order: $val;
 }
 
@@ -78,36 +69,23 @@
 // - applies to: flex items
 // <number>
 @mixin flex-grow($grow) {
-  -webkit-flex-grow: $grow;
-  -moz-flex-grow: $grow;
-  -ms-flex-grow: $grow;
   flex-grow: $grow;
 }
 // Flex basis
 // - the initial main size of the flex item
-// - applies to: flex itemsnitial main size of the flex item
-// <width>
 @mixin flex-basis($width: $g-col-basis) {
-  -webkit-flex-basis: $width;
-  -moz-flex-basis: $width;
-  -ms-flex-basis: $width;
   flex-basis: $width;
 }
 
-// Set the "context" width for the grid
-@function g-context($g-col-basis, $g-col-count ,$g-gutter-width) {
-  $g-context: ($g-col-basis * $g-col-count) + ($g-gutter-width * ($g-col-count - 1));
-  @return $g-context;
-}
 // Grid Cols
-@mixin g-columns {
-  @for $i from 2 through $g-col-count {
-    $context: g-context($g-col-basis, $g-col-count ,$g-gutter-width) !global;
-    $target: ($g-col-basis * $i) + ($g-gutter-width * ($i - 1));
 
-    // Generate column modifier classes
-    &--#{$i} {
-      @include flex-grow(#{$i});
+@mixin g-width {
+  @for $i from 1 through $g-col-count {
+    &--#{$i}{
+
+      flex-basis:percentage(($g-col-basis * $i)/100);
+      //flex-basis: $g-col-basis;
+      //@include flex-grow(#{$i});
     }
   }
 }
@@ -129,19 +107,3 @@
   }
 }
 
-// Media queries
-@mixin mq($break) {
-  @if $break == "mobile" {
-    @media (max-width: $brkpoint-md) {
-      @content;
-    }
-  }
-  @else if $break == "desktop" {
-    @media (min-width: $brkpoint-md+1) {
-      @content;
-    }
-  }
-  @else {
-    @error "Whoops! No value could be retrieved for `#{$break}`. "
-  }
-}
