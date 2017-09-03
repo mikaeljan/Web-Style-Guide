@@ -8,9 +8,8 @@ Using [Sass](http://sass-lang.com/guide) to create a responsive template guide f
 4. Create variables for repetitive values
 5. Convert repeating declaration groups into mixins
 
-Link to the website: <br />
-http://mikaeljan.github.io/Web-Style-Guide/
+## Live [demo](http://mikaeljan.github.io/Web-Style-Guide/)
 
-For any questions, please feel free to contact me:<br/>
-mikael.janek@gmail.com
-
+## Contact
+For any questions please feel free to contact me:<br />
+<a href="mailto:mikael.janek@gmail.com">mikael.janek@gmail.com</a>
